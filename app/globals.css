@@ -1,49 +1,115 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+  --muted: #666666;
+  --accent: #0b5cad;
+  --border: #dddddd;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #101214;
+    --foreground: #ececec;
+    --muted: #a0a0a0;
+    --accent: #6cb0f5;
+    --border: #2c3036;
   }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+body {
   margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+main {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.banner {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+}
+
+.year-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.year-list a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.quarter {
+  margin: 2rem 0;
+}
+
+.quarter h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+
+.doc-list {
+  padding-left: 1.25rem;
+}
+
+.doc-list li {
+  margin: 0.25rem 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
 }
